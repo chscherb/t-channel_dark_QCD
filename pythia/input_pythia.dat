@@ -1,0 +1,323 @@
+! This file contains commands to be read in for a Pythia8 run.
+! Lines not beginning with a letter or digit are comments.
+! Names are case-insensitive  -  but spellings-sensitive!
+! All masses & widths in GeV, lifetimes in millimeter
+
+! 1) Event Generation Switches
+
+Beams:frameType = 4
+Beams:LHEF = unweighted_events_2000_down.lhe 	!Name of the .lhe file 5TeV_up  fv_up_1000  unweighted_events_5TeV_up
+SLHA:allowUserOverride = on
+
+!ProcessLevel:all=off
+PartonLevel:MPI = off
+!PartonLevel:FSR = off
+PartonLevel:ISR=off
+!HadronLevel:all=off
+
+HiddenValley:alphaOrder = 1								! Running of Alpha_Dark
+HiddenValley:FSR = on
+HiddenValley:alphaFSR = 0.7
+HiddenValley:fragment = on
+
+SpaceShower:QCDshower = on								! Yes ISR SM Showering
+TimeShower:QCDshower = on								! Yes FSR SM Showering
+ParticleDecays:FSRinDecays = on							! Yes SM Showering of Decays
+HadronLevel:Hadronize = on								! No SM Hadronization
+
+
+
+! 2) Dark Sector Model
+
+! Gauge Group and Flavour
+HiddenValley:Ngauge = 3             		! Number of dark QCD colours		!!
+HiddenValley:nFlav = 4				! # flavours used for the running!
+HiddenValley:separateFlav = on			! allow seperate properties for dark quarks and pions
+HiddenValley:Lambda=4									! Confinement Scale, we'll probably use lambda = mQ
+HiddenValley:pTminFSR = 4.4								! Lowest Alllowed pT of Emission. IMPORTANT: pTminFSR > Lambda, >, not =>!!!
+
+
+
+! Mediator
+HiddenValley:spinFv =0 				! Spin of bi-fundamental res.
+
+!4900001:m0 = 2000
+
+4900001:colType=1									!!
+
+4900001:spinType=2									!!
+
+
+! The following is required due to a bug in v8183, fixed in 8185 and later
+4900001:isResonance = on								!!
+4900001:mayDecay = on									!!
+!Change the decays of the mediator for your needs
+4900001:oneChannel on 0.111 103 1  4900101
+4900001:addChannel on 0.111 103 3  4900101
+4900001:addChannel on 0.111 103 5  4900101
+4900001:addChannel on 0.111 103 1  4900102
+4900001:addChannel on 0.111 103 3  4900102
+4900001:addChannel on 0.111 103 5  4900102
+4900001:addChannel on 0.111 103 1  4900103
+4900001:addChannel on 0.111 103 3  4900103
+4900001:addChannel on 0.111 103 5  4900103
+!4900001:0:bRatio = 1									!!
+4900001:0:meMode = 103									!!
+
+! Dark Quark Properties
+4900101:m0 = 2									! dark quark mass, usually we want mQ = 2 mpiD
+4900102:m0 = 2.0									! dark quark mass, usually we want mQ = 2 mpiD
+4900103:m0 = 2.0									! dark quark mass, usually we want mQ = 2 mpiD
+4900104:m0 = 2.0									! dark quark mass, usually we want mQ = 2 mpiD
+
+4900101:spinType=1									!!
+4900102:spinType=1									!!
+4900103:spinType=1									!!
+4900104:spinType=1									!!
+
+4900101:colType=0									!!
+4900102:colType=0									!!
+4900103:colType=0									!!
+4900104:colType=0									!!
+
+4900111:m0 = 1.0									! diagonal dark pion mass
+4900221:m0 = 1.0									! diagonal dark pion mass
+4900331:m0 = 1.0									! diagonal dark pion mass
+4900441:m0 = 1.0									! diagonal dark pion mass    
+
+4900113:m0 = 4.0									! diagonal dark rho mass, before we used mrhoD = 4 mpiD
+4900223:m0 = 4.0									! diagonal dark rho mass, before we used mrhoD = 4 mpiD
+4900333:m0 = 4.0									! diagonal dark rho mass, before we used mrhoD = 4 mpiD
+4900443:m0 = 4.0									! diagonal dark rho mass, before we used mrhoD = 4 mpiD
+
+4900211:m0 = 1.0									! off-diagonal dark pion mass
+4900213:m0 = 4.0									! off-diagonal dark rho mass
+4900311:m0 = 1.0									! off-diagonal dark pion mass
+4900313:m0 = 4.0									! off-diagonal dark rho mass
+4900321:m0 = 1.0									! off-diagonal dark pion mass
+4900323:m0 = 4.0									! off-diagonal dark rho mass
+4900411:m0 = 1.0									! off-diagonal dark pion mass
+4900413:m0 = 4.0									! off-diagonal dark rho mass
+4900421:m0 = 1.0									! off-diagonal dark pion mass
+4900423:m0 = 4.0									! off-diagonal dark rho mass
+4900431:m0 = 1.0									! off-diagonal dark pion mass
+4900433:m0 = 4.0									! off-diagonal dark rho mass
+
+4900001:isVisible = off
+4900003:isVisible = off
+4900005:isVisible = off
+
+4900101:isVisible = off
+4900102:isVisible = off
+4900103:isVisible = off
+4900104:isVisible = off
+
+4900111:isVisible = off
+4900221:isVisible = off
+4900331:isVisible = off
+4900441:isVisible = off
+
+4900113:isVisible = off
+4900223:isVisible = off
+4900333:isVisible = off
+4900443:isVisible = off
+
+4900211:isVisible = off
+4900213:isVisible = off
+4900311:isVisible = off
+4900313:isVisible = off
+4900321:isVisible = off
+4900323:isVisible = off
+4900411:isVisible = off
+4900413:isVisible = off
+4900421:isVisible = off
+4900423:isVisible = off
+4900431:isVisible = off
+4900433:isVisible = off
+
+
+! All dark rhos can decay
+4900113:mayDecay=on
+4900223:mayDecay=on
+4900333:mayDecay=on
+4900443:mayDecay=on
+
+4900213:mayDecay=on
+4900313:mayDecay=on
+4900323:mayDecay=on
+4900413:mayDecay=on
+4900423:mayDecay=on
+4900433:mayDecay=on
+
+!diagonal dark pions (Note that if piv44 is interpreted as eta it would decay to a diagonal and to off-diagonal dark pions (which could be stable). In this case we very slightly undestimate the MET.)
+
+!4900111:oneChannel on 0.3 91 1 -1      		! diagonal dark pion decay to up quarks
+!4900111:addchannel on 0.3 91 3 -3
+!4900111:addchannel on 0.3 91 5 -5
+!4900221:oneChannel on 1.0 91 1 -1      		! diagonal dark pion decay to up quarks
+!4900331:oneChannel on 1.0 91 1 -1      		! diagonal dark pion decay to up quarks
+!4900441:oneChannel on 1.0 91 1 -1      		! diagonal dark pion decay to up quarks
+
+4900111:oneChannel on 1 91 1 -1                             ! diagonal dark pion decay to down quarks
+4900111:addChannel on 0 91 1 -3                                               ! diagonal dark pion decay to down and strange quarks
+4900111:addChannel on 0 91 3 -3                                               ! diagonal dark pion decay to strange quarks
+4900111:addChannel on 0 91 1 -5                                               ! diagonal dark pion decay to down and bottom quarks
+4900111:addChannel on 0. 91 3 -5                                               ! diagonal dark pion decay to bottom and strange quarks
+4900111:addChannel on 0. 91 5 -5                                               ! diagonal dark pion decay to bottom quarks
+4900221:oneChannel on 1 91 1 -1                             ! diagonal dark pion decay to down quarks
+4900221:addChannel on 0 91 1 -3                                               ! diagonal dark pion decay to down and strange quarks
+4900221:addChannel on 0 91 3 -3                                               ! diagonal dark pion decay to strange quarks
+4900221:addChannel on 0 91 1 -5                                               ! diagonal dark pion decay to down and bottom quarks
+4900221:addChannel on 0. 91 3 -5                                               ! diagonal dark pion decay to bottom and strange quarks
+4900221:addChannel on 0. 91 5 -5                                               ! diagonal dark pion decay to bottom quark
+4900331:oneChannel on 1 91 1 -1                             ! diagonal dark pion decay to down quarks
+4900331:addChannel on 0 91 1 -3                                               ! diagonal dark pion decay to down and strange quarks
+4900331:addChannel on 0 91 3 -3                                               ! diagonal dark pion decay to strange quarks
+4900331:addChannel on 0 91 1 -5                                               ! diagonal dark pion decay to down and bottom quarks
+4900331:addChannel on 0. 91 3 -5                                               ! diagonal dark pion decay to bottom and strange quarks
+4900331:addChannel on 0. 91 5 -5                                               ! diagonal dark pion decay to bottom quarks
+4900441:oneChannel on 1 91 1 -1                             ! diagonal dark pion decay to down quarks
+4900441:addChannel on 0 91 1 -3                                               ! diagonal dark pion decay to down and strange quarks
+4900441:addChannel on 0 91 3 -3                                               ! diagonal dark pion decay to strange quarks
+4900441:addChannel on 0 91 1 -5                                               ! diagonal dark pion decay to down and bottom quarks
+4900441:addChannel on 0. 91 3 -5                                               ! diagonal dark pion decay to bottom and strange quarks
+4900441:addChannel on 0. 91 5 -5                                               ! diagonal dark pion decay to bottom quarks 
+ 
+
+
+
+!off-diagonal dark pions
+
+!4900211:oneChannel on 1.0 91 1 -1      		! off-diagonal dark pion decay to up quarks
+!4900311:oneChannel on 1.0 91 1 -1      		! off-diagonal dark pion decay to up quarks
+!4900321:oneChannel on 1.0 91 1 -1      		! off-diagonal dark pion decay to up quarks
+
+4900211:oneChannel on 1 91 1 -1                                          ! off-diagonal dark pion decay to down quarks
+4900211:addChannel on 0 91 1 -3                                               ! off-diagonal dark pion decay to down and strange quarks
+4900211:addChannel on 0 91 3 -3                                               ! off-diagonal dark pion decay to strange quarks
+4900211:addChannel on 0 91 1 -5                                               ! off-diagonal dark pion decay to down and bottom quarks
+4900211:addChannel on 0. 91 3 -5                                               ! off-diagonal dark pion decay to bottom and strange quarks
+4900211:addChannel on 0. 91 5 -5                                               ! off-diagonal dark pion decay to bottom quarks
+4900311:oneChannel on 1 91 1 -1                                          ! off-diagonal dark pion decay to down quarks
+4900311:addChannel on 0 91 1 -3                                               ! off-diagonal dark pion decay to down and strange quarks
+4900311:addChannel on 0 91 3 -3                                               ! off-diagonal dark pion decay to strange quarks
+4900311:addChannel on 0 1 -5                                               ! off-diagonal dark pion decay to down and bottom quarks
+4900311:addChannel on 0. 91 3 -5                                               ! off-diagonal dark pion decay to bottom and strange quarks
+4900311:addChannel on 0. 91 5 -5                                               ! off-diagonal dark pion decay to bottom quarks
+4900321:oneChannel on 1 91 1 -1                                          ! off-diagonal dark pion decay to down quarks
+4900321:addChannel on 0 91 1 -3                                               ! off-diagonal dark pion decay to down and strange quarks
+4900321:addChannel on 0 91 3 -3                                               ! off-diagonal dark pion decay to strange quarks
+4900321:addChannel on 0 91 1 -5                                               ! off-diagonal dark pion decay to down and bottom quarks
+4900321:addChannel on 0. 91 3 -5                                               ! off-diagonal dark pion decay to bottom and strange quarks
+4900321:addChannel on 0. 91 5 -5                                               ! off-diagonal dark pion decay to bottom quarks
+
+
+!stable dark pions
+
+4900411:mayDecay = off      				! off-diagonal stable dark pion
+4900421:mayDecay = off      				! off-diagonal stable dark pion
+4900431:mayDecay = off      				! off-diagonal stable dark pion
+
+! dark vector mesons
+
+!4900113:0:all on 1 102 4900111 4900111	
+4900113:oneChannel on 0.001 91 1 -1					! diagonal dark vector to up quarks 0.1%
+4900113:addchannel on 0.333 102 4900211 -4900211			! diagonal dark vector to dark pions 99.9%
+4900113:addchannel on 0.333 102 4900311 -4900311			! diagonal dark vector to dark pions 99.9%
+4900113:addchannel on 0.333 102 4900411 -4900411			! diagonal dark vector to dark pions 99.9%
+4900223:oneChannel on 0.001 91 1 -1					! diagonal dark vector to up quarks 0.1%
+4900223:addchannel on 0.333 102 4900211 -4900211			! diagonal dark vector to dark pions 99.9%
+4900223:addchannel on 0.333 102 4900321 -4900321			! diagonal dark vector to dark pions 99.9%
+4900223:addchannel on 0.333 102 4900421 -4900421			! diagonal dark vector to dark pions 99.9%
+4900333:oneChannel on 0.001 91 1 -1					! diagonal dark vector to up quarks 0.1%
+4900333:addchannel on 0.333 102 4900311 -4900311			! diagonal dark vector to dark pions 99.9%
+4900333:addchannel on 0.333 102 4900321 -4900321			! diagonal dark vector to dark pions 99.9%
+4900333:addchannel on 0.333 102 4900431 -4900431			! diagonal dark vector to dark pions 99.9%
+4900443:oneChannel on 0.001 91 1 -1					! diagonal dark vector to up quarks 0.1%
+4900443:addchannel on 0.333 102 4900411 -4900411			! diagonal dark vector to dark pions 99.9%
+4900443:addchannel on 0.333 102 4900421 -4900421			! diagonal dark vector to dark pions 99.9%
+4900443:addchannel on 0.333 102 4900431 -4900431			! diagonal dark vector to dark pions 99.9%
+
+
+!4900223:oneChannel on 0.999 102 4900221 4900221					! diagonal dark vector to dark pions 99.9%
+!4900223:addchannel on 0.001 91 1 -1			! diagonal dark vector to up quarks 0.1%
+!4900333:oneChannel on 0.999 102 4900331 4900331					! diagonal dark vector to dark pions 99.9%
+!4900333:addchannel on 0.001 91 1 -1					! diagonal dark vector to up quarks 0.1%
+!4900443:oneChannel on 0.999 102 4900441 4900441					! diagonal dark vector to dark pions 99.9%
+!4900443:addchannel on 0.001 91 1 -1					! diagonal dark vector to up quarks 0.1%
+
+
+4900213:oneChannel on 0.001 91 1 -1					! off-diagonal dark vector to up quarks 0.1%
+4900213:addchannel on 0.4995 102 4900211 4900111			! off-diagonal dark vector to dark pions 99.9%
+4900213:addchannel on 0.4995 102 4900211 4900221			! off-diagonal dark vector to dark pions 99.9%
+4900313:oneChannel on 0.001 91 1 -1					! off-diagonal dark vector to up quarks 0.1%
+4900313:addchannel on 0.4995 102 4900311 4900111			! off-diagonal dark vector to dark pions 99.9%
+4900313:addchannel on 0.4995 102 4900311 4900331			! off-diagonal dark vector to dark pions 99.9%
+4900323:oneChannel on 0.001 91 1 -1					! off-diagonal dark vector to up quarks 0.1%
+4900323:addchannel on 0.4995 102 4900321 4900221			! off-diagonal dark vector to dark pions 99.9%
+4900323:addchannel on 0.4995 102 4900321 4900331			! off-diagonal dark vector to dark pions 99.9%
+4900413:oneChannel on 0.001 91 1 -1					! off-diagonal dark vector to up quarks 0.1%
+4900413:addchannel on 0.4995 102 4900411 4900111			! off-diagonal dark vector to dark pions 99.9%
+4900413:addchannel on 0.4995 102 4900411 4900441			! off-diagonal dark vector to dark pions 99.9%
+4900423:oneChannel on 0.001 91 1 -1					! off-diagonal dark vector to up quarks 0.1%
+4900423:addchannel on 0.4995 102 4900421 4900221			! off-diagonal dark vector to dark pions 99.9%
+4900423:addchannel on 0.4995 102 4900421 4900441			! off-diagonal dark vector to dark pions 99.9%
+4900433:oneChannel on 0.001 91 1 -1					! off-diagonal dark vector to up quarks 0.1%
+4900433:addchannel on 0.4995 102 4900431 4900331			! off-diagonal dark vector to dark pions 99.9%
+4900433:addchannel on 0.4995 102 4900431 4900441			! off-diagonal dark vector to dark pions 99.9%
+
+!4900313:oneChannel on 0 91 1 -1					! off-diagonal dark vector to dark pions 99.9%
+!4900313:addchannel on 1 91 4900311 4900311			! off-diagonal dark vector to up quarks 0.1%
+!4900323:oneChannel on 0 102 1 -1					! off-diagonal dark vector to dark pions 99.9%
+!4900323:addchannel on 1 102 4900321 4900321			! off-diagonal dark vector to up quarks 0.1%
+!4900413:oneChannel on 0 91 1 -1					! off-diagonal dark vector to dark pions 99.9%
+!4900413:addchannel on 1 102 4900411 4900411			! off-diagonal dark vector to up quarks 0.1%
+!4900423:oneChannel on 0 91 1 -1					! off-diagonal dark vector to dark pions 99.9%
+!4900423:addchannel on 1 102 4900421 4900421			! off-diagonal dark vector to up quarks 0.1%
+!4900433:oneChannel on 0 91 1 -1					! off-diagonal dark vector to dark pions 99.9%
+!4900433:addchannel on 1 102 4900431 4900431			! off-diagonal dark vector to up quarks 0.1%
+
+
+!no decays of dark pions
+
+!4900111:mayDecay = off
+!4900221:mayDecay = off
+!4900331:mayDecay = off
+!4900441:mayDecay = off
+!4900211:mayDecay = off
+!4900311:mayDecay = off
+!4900321:mayDecay = off 
+
+!no decays of dark rhos
+
+!4900113:mayDecay = off
+!4900223:mayDecay = off
+!4900333:mayDecay = off
+!4900443:mayDecay = off
+!4900213:mayDecay = off
+!4900313:mayDecay = off
+!4900323:mayDecay = off 
+!4900413:mayDecay = off      			
+!4900423:mayDecay = off      				
+!4900433:mayDecay = off      				
+
+
+! 4) lifetimes of the decaying dark pions  
+
+4900111:tau0 = 1                              ! diagonal dark pion lifetime in mm
+4900221:tau0 = 1                              ! diagonal dark pion lifetime in mm
+4900331:tau0 = 1                              ! diagonal dark pion lifetime in mm
+4900441:tau0 = 1                              ! diagonal dark pion lifetime in mm 
+   				
+4900211:tau0 = 0.1875                            ! off-diagonal dark pion lifetime in mm
+4900311:tau0 = 0.1875                            ! off-diagonal dark pion lifetime in mm
+4900321:tau0 = 0.1875                            ! off-diagonal dark pion lifetime in mm    				
+
+
+
+! 5) Lund Parameters, we dont't want to change them from the default
+
+!HiddenValley:aLund = 0.3								! Lund a Parameter
+!HiddenValley:bmqv2 = 0.8								! Lund b Parameter
+!HiddenValley:rFactqv = 1.0								! Lund r Parameter
+
