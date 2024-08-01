@@ -108,7 +108,7 @@ In the in 2409.XXXX described scenario fourth and higher generation dark quarks 
 
 In addition, dark meson masses, lifetimes and branching ratios can be set in pythia. These are model dependent and it is recommended to set up a script to calculate them for a model and parameter choice. An example with four dark flavours is given.
 
-
+Finally, note that in the given example the dark sector hadronization parameters are set to their default values. Unlike the SM hadronization parameters they are not tuned to data and changing them can change the model signatures.  
 
 
 
