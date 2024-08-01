@@ -37,7 +37,7 @@ Note, the different PDG ID of the mediator, while the PDG IDs of the dark quarks
 
 ## Example madgraph event generation
 
--mediator pair production for couplings to down-type quarks
+- mediator pair production for couplings to down-type quarks
 
 `import model darkQCD_fv_down`
 
@@ -45,7 +45,7 @@ Note, the different PDG ID of the mediator, while the PDG IDs of the dark quarks
 
 `output mediator_pair_down`
 
--dark quark production via t-channel mediator exchange for couplings to up-type quarks
+- dark quark production via t-channel mediator exchange for couplings to up-type quarks
 
 `import model darkQCD_fv_up`
 
