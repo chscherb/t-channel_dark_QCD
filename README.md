@@ -61,4 +61,43 @@ Note, the different PDG ID of the mediator, while the PDG IDs of the dark quarks
 
 
 ## Notes on using pythia for showering and hadronization
-The pythia HiddenValley module can be used for showering and hadronization of the dark sector. The PDG IDs in the UFO files are set so that they correspond to the ones of the HiddenValley module. 
+The pythia HiddenValley module can be used for showering and hadronization of the dark sector. The PDG IDs in the UFO files are set so that they correspond to the ones of the HiddenValley module. In pythia the model details are set by 
+
+`HiddenValley:Ngauge = 3             		! Number of dark QCD colours`
+`HiddenValley:nFlav = 4				          ! # flavours used for the running!`
+`HiddenValley:separateFlav = on			    ! allow seperate properties for dark quarks and pions`
+`HiddenValley:Lambda=40									! confinement scale as used by pythia`
+`HiddenValley:pTminFSR = 44.0						! Lowest Alllowed pT of Emission. IMPORTANT: pTminFSR > Lambda, >, not =>`
+
+
+`4900001:m0 = 2000`
+
+`4900101:m0 = 2`
+
+`4900102:m0 = 2`
+
+`4900103:m0 = 2`
+
+The mediator decays are set as 
+
+`4900001:oneChannel on 0.111 103 1  4900101`
+
+`4900001:addChannel on 0.111 103 3  4900101`
+
+`4900001:addChannel on 0.111 103 5  4900101`
+
+`4900001:addChannel on 0.111 103 1  4900102`
+
+`4900001:addChannel on 0.111 103 3  4900102`
+
+`4900001:addChannel on 0.111 103 5  4900102`
+
+`4900001:addChannel on 0.111 103 1  4900103`
+
+`4900001:addChannel on 0.111 103 3  4900103`
+
+`4900001:addChannel on 0.111 103 5  4900103`
+
+
+
+
