@@ -1,0 +1,176 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      7666,        168]
+NotebookOptionsPosition[      6168,        138]
+NotebookOutlinePosition[      6617,        155]
+CellTagsIndexPosition[      6574,        152]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"Quit", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.888427636092348*^9, 3.888427638342126*^9}, {
+  3.888437251422082*^9, 3.8884372520315113`*^9}, {3.916343547683301*^9, 
+  3.916343548349739*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"45140939-ae71-44ec-aa30-794e7fae1610"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$FeynRulesPath", "=", 
+   RowBox[{"SetDirectory", "[", "\"\<~/feynrules-current\>\"", "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.4126590568924417`*^9, 3.412659075768538*^9}, {
+  3.423416384793591*^9, 3.423416395796236*^9}, {3.4234174151520243`*^9, 
+  3.423417420076274*^9}, {3.870769093252101*^9, 3.870769126412733*^9}, {
+  3.8792738898117857`*^9, 3.8792738931588173`*^9}, {3.888427640274456*^9, 
+  3.888427640991864*^9}, {3.888427719075076*^9, 3.888427719797969*^9}, {
+  3.909672467679461*^9, 3.90967246848277*^9}, {3.916340767359268*^9, 
+  3.9163407680028343`*^9}, {3.916343402817944*^9, 3.9163434035023117`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"dc30fc35-8747-4736-9e87-57bff7b5a630"],
+
+Cell[BoxData[
+ RowBox[{"<<", "FeynRules`"}]], "Input",
+ CellChangeTimes->{{3.405055838984818*^9, 3.405055920344975*^9}, {
+  3.412659080315321*^9, 3.412659086386956*^9}, {3.4137155382623587`*^9, 
+  3.4137155389379063`*^9}, {3.87927389499405*^9, 3.879273896635309*^9}, {
+  3.888437792233409*^9, 3.888437793533864*^9}, {3.888438104488716*^9, 
+  3.888438105173678*^9}, {3.8884382228950777`*^9, 3.888438223574246*^9}, {
+  3.8884385453840427`*^9, 3.8884385460798798`*^9}, {3.888439130152731*^9, 
+  3.888439131363315*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"0a8b7787-b6d7-40cb-96a4-ed65d95707e4"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"$FeynRulesPath", "<>", "\"\</Models/darkQCD/feynrules\>\""}], 
+   "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.5564215512893133`*^9, 3.556421554407504*^9}, {
+  3.879273655690621*^9, 3.879273658296247*^9}, {3.87927390377703*^9, 
+  3.879273908184318*^9}, {3.8886932101531477`*^9, 3.888693214381707*^9}, {
+  3.9163407920021133`*^9, 3.916340792717917*^9}, {3.916343560094987*^9, 
+  3.91634356072841*^9}, {3.931546590478881*^9, 3.9315465942893763`*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"723307c8-1ce0-4796-a37d-fbd7e7f5a24e"],
+
+Cell[CellGroupData[{
+
+Cell["A first example : QCD (with 3 quark flavors)", "Title",
+ CellChangeTimes->{{3.405055931753027*^9, 
+  3.4050559493200197`*^9}},ExpressionUUID->"6e95093b-adfa-45b1-9d92-\
+5c3737f48c70"],
+
+Cell[CellGroupData[{
+
+Cell["The model file", "Section",
+ CellChangeTimes->{{3.405056344594654*^9, 
+  3.405056350062855*^9}},ExpressionUUID->"c0df3fa7-b393-403f-9a6b-\
+b1bd7a1f2b6b"],
+
+Cell["We first read in the model file via the command", "Text",
+ CellChangeTimes->{{3.40505595685706*^9, 3.405055957006489*^9}, {
+  3.4050559897639112`*^9, 
+  3.4050560009412193`*^9}},ExpressionUUID->"bc848648-b945-47c6-b287-\
+c5969242dbc5"],
+
+Cell[BoxData[
+ RowBox[{"LoadModel", "[", "\"\<darkQCD_t-channel_down.fr\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.405056007497719*^9, 3.405056021457884*^9}, {
+  3.8707691387178783`*^9, 3.870769141697714*^9}, {3.879273664698184*^9, 
+  3.8792736706192217`*^9}, {3.8884368364376593`*^9, 3.888436841236496*^9}, {
+  3.888438110162941*^9, 3.8884381108408117`*^9}, {3.888438227724079*^9, 
+  3.888438229938175*^9}, {3.9315461410114202`*^9, 3.931546150722395*^9}, {
+  3.931546198307291*^9, 3.9315461994795227`*^9}, {3.9315465981580143`*^9, 
+  3.93154660221592*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"96a4c0fe-4d63-40bf-afca-c15990d22d69"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"FeynmanRules", "[", "LSM", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.888435410863899*^9, 3.888435415120206*^9}, {
+   3.8884368696495447`*^9, 3.888436889880596*^9}, {3.888437329286865*^9, 
+   3.888437331147016*^9}, {3.888438422393652*^9, 3.888438435154126*^9}, {
+   3.8886932216219997`*^9, 3.888693228406955*^9}, {3.888693824747366*^9, 
+   3.888693826467717*^9}, 3.916340807340836*^9, 3.9163451980282373`*^9, 
+   3.931545891477932*^9},
+ CellLabel->"In[5]:=",ExpressionUUID->"5f5fd024-be01-4ea2-a787-0f470b1227be"],
+
+Cell[BoxData[
+ RowBox[{"FeynmanRules", "[", "LDark", "]"}]], "Input",
+ CellChangeTimes->{{3.909671673442417*^9, 3.9096716876886473`*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"33e1db22-0896-4dce-bc0c-ca2d3b0d6bf1"],
+
+Cell[BoxData[
+ RowBox[{"WriteUFO", "[", 
+  RowBox[{"LSM", ",", 
+   RowBox[{"MaxParticles", "->", "4"}], ",", 
+   RowBox[{"Output", "->", "\"\<darkQCD_fv_down\>\""}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.879273801339212*^9, 3.879273817851654*^9}, {
+  3.879274101483653*^9, 3.879274102656478*^9}, {3.888427746124419*^9, 
+  3.888427750535935*^9}, {3.888438236474979*^9, 3.888438237484008*^9}, {
+  3.888438476653161*^9, 3.888438478792938*^9}, {3.888438553640298*^9, 
+  3.888438554324038*^9}, {3.888439064511001*^9, 3.888439066060725*^9}, {
+  3.8886932698570423`*^9, 3.888693278148797*^9}, {3.888693832786149*^9, 
+  3.8886938335099382`*^9}, {3.888693956410398*^9, 3.8886939578791*^9}, {
+  3.909671253508318*^9, 3.909671256088037*^9}, {3.9163411861878757`*^9, 
+  3.916341186898622*^9}, {3.9163419982298813`*^9, 3.916342001378256*^9}, {
+  3.9315455190589943`*^9, 3.931545526412496*^9}, {3.9315459025953293`*^9, 
+  3.931545908436273*^9}, {3.931546167880035*^9, 3.931546170227538*^9}, {
+  3.931546363672463*^9, 3.931546364881034*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"7a426677-a8ac-4e2f-949e-b8b324ef7acd"],
+
+Cell[BoxData[
+ RowBox[{"Quit", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.931545940883683*^9, 3.931545942031345*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"6efd6de9-95a0-4f24-bba4-4ba25b055de8"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1410.75, 1056.75},
+WindowMargins->{{Automatic, -51}, {1046.25, Automatic}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+FrontEndVersion->"13.0 for Linux x86 (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"20fa6410-a0bd-4b13-ab00-0f1dec4eb05b"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[545, 20, 296, 5, 29, "Input",ExpressionUUID->"45140939-ae71-44ec-aa30-794e7fae1610"],
+Cell[844, 27, 736, 12, 29, "Input",ExpressionUUID->"dc30fc35-8747-4736-9e87-57bff7b5a630"],
+Cell[1583, 41, 593, 9, 29, "Input",ExpressionUUID->"0a8b7787-b6d7-40cb-96a4-ed65d95707e4"],
+Cell[2179, 52, 595, 10, 29, "Input",ExpressionUUID->"723307c8-1ce0-4796-a37d-fbd7e7f5a24e"],
+Cell[CellGroupData[{
+Cell[2799, 66, 189, 3, 98, "Title",ExpressionUUID->"6e95093b-adfa-45b1-9d92-5c3737f48c70"],
+Cell[CellGroupData[{
+Cell[3013, 73, 159, 3, 68, "Section",ExpressionUUID->"c0df3fa7-b393-403f-9a6b-b1bd7a1f2b6b"],
+Cell[3175, 78, 241, 4, 35, "Text",ExpressionUUID->"bc848648-b945-47c6-b287-c5969242dbc5"],
+Cell[3419, 84, 640, 10, 29, "Input",ExpressionUUID->"96a4c0fe-4d63-40bf-afca-c15990d22d69"],
+Cell[4062, 96, 551, 9, 29, "Input",ExpressionUUID->"5f5fd024-be01-4ea2-a787-0f470b1227be"],
+Cell[4616, 107, 215, 3, 29, "Input",ExpressionUUID->"33e1db22-0896-4dce-bc0c-ca2d3b0d6bf1"],
+Cell[4834, 112, 1107, 17, 29, "Input",ExpressionUUID->"7a426677-a8ac-4e2f-949e-b8b324ef7acd"],
+Cell[5944, 131, 196, 3, 29, "Input",ExpressionUUID->"6efd6de9-95a0-4f24-bba4-4ba25b055de8"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
