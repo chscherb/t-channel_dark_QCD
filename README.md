@@ -104,7 +104,7 @@ The mediator decays are set as
 
 `4900001:addChannel on 0.111 103 5  4900103`
 
-In the in 2409.XXXX described scenario fourth and higher generation dark quarks are only produced in the shower as they don't couple to SM quarks. In pythia their masses are set in the same way as the first three generations. The PDG IDs for higher generation dark quarks are `490010i` with `i = 4, 5, ...8`.  
+In the in 2411.15073 described scenario fourth and higher generation dark quarks are only produced in the shower as they don't couple to SM quarks. In pythia their masses are set in the same way as the first three generations. The PDG IDs for higher generation dark quarks are `490010i` with `i = 4, 5, ...8`.  
 
 In addition, dark meson masses, lifetimes and branching ratios can be set in pythia. These are model dependent and it is recommended to set up a script to calculate them for a model and parameter choice. An example with four dark flavours is given. The model settings are specified in `input_pythia.dat`, `LHC_generate_events` writes out the shower and hadronization process for the first ten events from the provided lhe file. The output can be seen in `pythia_output.txt`. The pythia example can be called using
 
