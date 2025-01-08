@@ -59,6 +59,12 @@ Note, the different PDG ID of the mediator, while the PDG IDs of the dark quarks
 
 `output t_channel_dark_quarks_up`
 
+To ensure the cross sections are well defined in the limit m<sub>Q</sub> &rarr; 0, a p<sub>T</sub> cut should be imposed on the dark quarks. For example, adding the line
+
+`{20: 4900101, 20: 4900102, 20: 4900103} = pt_min_pdg ! pt cut for other particles (use pdg code). Applied on particle and anti-particle`
+
+to the run card enforces the dark quarks to have p<sub>T</sub> > 20 GeV. 
+
 
 ## Notes on using pythia for showering and hadronization
 The pythia HiddenValley module can be used for showering and hadronization of the dark sector. The PDG IDs in the UFO files are set so that they correspond to the ones of the HiddenValley module. In pythia the model details are set by 
