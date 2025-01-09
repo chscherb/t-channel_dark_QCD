@@ -61,7 +61,7 @@ Note, the different PDG ID of the mediator, while the PDG IDs of the dark quarks
 
 To ensure the cross sections are well defined in the limit m<sub>Q</sub> &rarr; 0, a p<sub>T</sub> cut should be imposed on the dark quarks. For example, adding the line
 
-`{20: 4900101, 20: 4900102, 20: 4900103} = pt_min_pdg ! pt cut for other particles (use pdg code). Applied on particle and anti-particle`
+`{4900101: 20, 4900102: 20, 4900103: 20} = pt_min_pdg ! pt cut for other particles (use pdg code). Applied on particle and anti-particle`
 
 to the run card enforces the dark quarks to have p<sub>T</sub> > 20 GeV. 
 
