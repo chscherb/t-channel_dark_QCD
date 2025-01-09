@@ -59,7 +59,7 @@ Note, the different PDG ID of the mediator, while the PDG IDs of the dark quarks
 
 `output t_channel_dark_quarks_up`
 
-To ensure the cross sections are well defined in the limit m<sub>Q</sub> &rarr; 0, a p<sub>T</sub> cut should be imposed on the dark quarks. For example, adding the line
+To ensure the cross section is well defined in the limit m<sub>Q</sub> &rarr; 0, a p<sub>T</sub> cut should be imposed on the dark quarks. For example, adding the line
 
 `{4900101: 20, 4900102: 20, 4900103: 20} = pt_min_pdg ! pt cut for other particles (use pdg code). Applied on particle and anti-particle`
 
