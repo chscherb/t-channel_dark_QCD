@@ -22,6 +22,8 @@ Similarily, the masses of the mediator and dark quarks can be set in the `param_
 
 `4900103 1.000000e+01 # mdarkq3`
 
+An example parameter card where the mediator width is already set to Auto is provided in the cards folder.
+
 ## couplings to up-type quarks
 The same labels as for the couplings to down-type quarks are used for couplings to up-type quarks. Again, the mediator width  and the masses can be manually set in the `param_card.dat` using 
 
