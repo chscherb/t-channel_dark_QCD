@@ -37,7 +37,7 @@ The same labels as for the couplings to down-type quarks are used for couplings 
 
 `4900103 1.000000e+01 # mdarkq3`
 
-Note, the different PDG ID of the mediator, while the PDG IDs of the dark quarks is the same as for the case of couplings to down-type quarks.  
+Note, the different PDG ID of the mediator, while the PDG IDs of the dark quarks is the same as for the case of couplings to down-type quarks. An example parameter card with the mediator width set to Auto can be found in the cards folder.
 
 ## Example madgraph event generation
 
@@ -67,7 +67,7 @@ To ensure the cross section is well defined in the limit m<sub>Q</sub> &rarr; 0,
 
 `{4900101: 20, 4900102: 20, 4900103: 20} = pt_min_pdg ! pt cut for other particles (use pdg code). Applied on particle and anti-particle`
 
-to the run card enforces the dark quarks to have p<sub>T</sub> > 20 GeV. 
+to the run card enforces the dark quarks to have p<sub>T</sub> > 20 GeV. Example run cards with a 20 GeV cut on the p<sub>T</sub> of the dark quarks can be found in the cards folder.  
 
 
 ## Notes on using pythia for showering and hadronization
