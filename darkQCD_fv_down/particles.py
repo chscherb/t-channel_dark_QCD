@@ -339,7 +339,11 @@ b = Particle(pdg_code = 5,
 
 b__tilde__ = b.anti()
 
-dDark1 = Particle(pdg_code = 4900101,
+# NOTE: pdg_code negated so that the mediator decays to +4900101..103, matching
+# Pythia's Hidden Valley convention (4900001 = Dv is an HV *fundamental* and must
+# decay to a dark quark, not an anti-dark-quark). Dark quarks are electrically
+# neutral SU(3)_C singlets, so this is a pure relabelling: no physics changes.
+dDark1 = Particle(pdg_code = -4900101,
                   name = 'dDark1',
                   antiname = 'dDark1~',
                   spin = 2,
@@ -355,7 +359,11 @@ dDark1 = Particle(pdg_code = 4900101,
 
 dDark1__tilde__ = dDark1.anti()
 
-dDark2 = Particle(pdg_code = 4900102,
+# NOTE: pdg_code negated so that the mediator decays to +4900101..103, matching
+# Pythia's Hidden Valley convention (4900001 = Dv is an HV *fundamental* and must
+# decay to a dark quark, not an anti-dark-quark). Dark quarks are electrically
+# neutral SU(3)_C singlets, so this is a pure relabelling: no physics changes.
+dDark2 = Particle(pdg_code = -4900102,
                   name = 'dDark2',
                   antiname = 'dDark2~',
                   spin = 2,
@@ -371,7 +379,11 @@ dDark2 = Particle(pdg_code = 4900102,
 
 dDark2__tilde__ = dDark2.anti()
 
-dDark3 = Particle(pdg_code = 4900103,
+# NOTE: pdg_code negated so that the mediator decays to +4900101..103, matching
+# Pythia's Hidden Valley convention (4900001 = Dv is an HV *fundamental* and must
+# decay to a dark quark, not an anti-dark-quark). Dark quarks are electrically
+# neutral SU(3)_C singlets, so this is a pure relabelling: no physics changes.
+dDark3 = Particle(pdg_code = -4900103,
                   name = 'dDark3',
                   antiname = 'dDark3~',
                   spin = 2,
